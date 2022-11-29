@@ -1,4 +1,4 @@
-def archExist(name):
+def archExist(name): #Verifica se já existe um arquivo ou não;
     try:
         op = open(name, 'rt')
         op.close()
@@ -7,7 +7,7 @@ def archExist(name):
     else:
         return True
 
-def createarch(name):
+def createarch(name): #Cria um arquivo txt para adicionar as palavras;
     try:
         op = open(name, 'wt+')
         op.close()
@@ -17,7 +17,7 @@ def createarch(name):
         print(f'Archive {name} was created successfully')
 
 
-def register(arq, name='unknown'):
+def register(arq, name='unknown'): #Registra o nome das palavras correspondentes;
     try:
         op = open(arq, 'at')
     except:
@@ -30,12 +30,3 @@ def register(arq, name='unknown'):
         else:
             print(f'Add a new register {name}')
             op.close()
-            
-def keeping(option):
-    while option != 'N':
-        keeping(option)
-        while option not in 'YN':
-            keeping(option)
-            if option == 'N':
-                break
-    return option
